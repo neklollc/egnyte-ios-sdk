@@ -42,12 +42,10 @@ class LoginViewController: UIViewController, WKUIDelegate, WKNavigationDelegate 
                                               target: self,
                                               action:#selector(didCancelAuthProcess))
         self.navigationItem.setLeftBarButton(cancelButton, animated: true)
-        URLSession.shared.reset { 
-            self.webView.load(self.urlRequest!)
-        }
+        self.webView.load(self.urlRequest!)
     }
     
-    func didCancelAuthProcess() {
+    @objc func didCancelAuthProcess() {
         self.oAuthDelegate?.didResigned()
     }
     
