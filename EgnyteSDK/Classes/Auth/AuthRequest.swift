@@ -124,7 +124,7 @@ import Foundation
     static func randomAlphaNumericState(_ bytes: Int) -> String {
         
         let allowedChars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
-        let allowedCharsCount = UInt32(allowedChars.characters.count)
+        let allowedCharsCount = UInt32(allowedChars.count)
         var randomString = ""
         
         while randomString.utf8.count * 8 < bytes {
